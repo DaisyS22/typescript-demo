@@ -76,27 +76,83 @@ class Dog implements DogInterface {
 }
 
 var scooby:Dog = new Dog('Scooby Doo', 'Great Dane');
-scooby.eat('kibbles') 
+scooby.eat('kibble') 
+
+var dogArray:DogInterface[] = [];
+
+const addDog = (dog: DogInterface) => {
+    dogArray.push(dog)
+}
+
+addDog(scooby)
+addDog(myDog)
+
+addDog({
+    name: 'Bantay',
+    breed: 'Akita',
+    eat: (food:string) => { console.log()}
+})
+
+export const loopDogs = () => {
+    // for
+    console.log('for loop')
+    for(let i = 0; i < dogArray.length; i++) {
+        console.log(dogArray[i])
+    }
+    
+    // for (enhanced or shorthand)
+    console.log('for loop shorthand')
+    for(let data of dogArray) {
+        console.log(data)
+    }
+    
+    // for (index)
+    console.log('for loop index')
+    for(let data in dogArray) {
+        console.log(dogArray[data])
+    }
+    
+    // while
+    let i = 0;
+    console.log('while loop')
+    while(i < dogArray.length) {
+        console.log(dogArray[i])
+        i++;
+    }
+    
+    // forEach
+    console.log('forEach')
+    dogArray.forEach(element => {
+        console.log(element)
+    });
+    
+    // map
+    console.log('map')
+    dogArray = dogArray.map(data => {
+        console.log(data)
+        data.breed = 'morph'
+        return data
+    })
+    
+    // forEach
+    console.log('forEach2')
+    dogArray.forEach(element => {
+        console.log(element)
+    });
+}
+
+loopDogs()
+
+var tuple: (string | number)[] = ['myString', 500]
 
 
-
-
-
-
-
-
-
-
-
-
-
+///////////////////////////
 // changes
 let parent2 = 'old';
 parent2 = 'new';
 
 // constant
 const pi = 3.1416;
-
 
 // type assertion
 var variableString:any = 'mynameisjohn'
