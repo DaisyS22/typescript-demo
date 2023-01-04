@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loopDogs = exports.testFunction = void 0;
+exports.displayNames = exports.addName = exports.loopDogs = exports.testFunction = void 0;
 const testFunction = () => {
     console.log("First hello from Typescript - update2");
 };
@@ -112,7 +112,35 @@ const loopDogs = () => {
 };
 exports.loopDogs = loopDogs;
 (0, exports.loopDogs)();
+let x = 2;
+// switch
+switch (x) {
+    case 1:
+        break;
+}
 var tuple = ['myString', 500];
+var names = [];
+const addName = (name) => {
+    names.push(name);
+    (0, exports.displayNames)();
+};
+exports.addName = addName;
+const displayNames = () => {
+    var list = document.getElementById('myList');
+    if (list) {
+        while (list.hasChildNodes() && list.firstChild) {
+            list.removeChild(list.firstChild);
+        }
+    }
+    names.forEach(data => {
+        let li = document.createElement('li');
+        li.innerText = data;
+        if (list) {
+            list.appendChild(li);
+        }
+    });
+};
+exports.displayNames = displayNames;
 ///////////////////////////
 // changes
 let parent2 = 'old';

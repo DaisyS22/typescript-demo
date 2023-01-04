@@ -143,8 +143,43 @@ export const loopDogs = () => {
 
 loopDogs()
 
+let x = 2
+
+// switch
+switch(x) {
+    case 1: 
+    break;
+
+}
+
 var tuple: (string | number)[] = ['myString', 500]
 
+var names:string[] = []
+
+export const addName = (name: string) => {
+    names.push(name)
+    displayNames()
+}
+
+export const displayNames = () => {
+    var list = document.getElementById('myList')
+
+    if(list) {
+        while(list.hasChildNodes() && list.firstChild) {
+            list.removeChild(list.firstChild)
+        }
+    }
+
+    names.forEach(data => {
+        let li = document.createElement('li')
+        li.innerText = data
+
+        if(list) {
+            list.appendChild(li)
+        }
+    })
+    
+}
 
 ///////////////////////////
 // changes
