@@ -57,7 +57,7 @@ class Dog {
     }
 }
 var scooby = new Dog('Scooby Doo', 'Great Dane');
-scooby.eat('sibuyas');
+scooby.eat('kibble');
 // changes
 let parent2 = 'old';
 parent2 = 'new';
