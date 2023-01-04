@@ -76,7 +76,7 @@ class Dog implements DogInterface {
 }
 
 var scooby:Dog = new Dog('Scooby Doo', 'Great Dane');
-scooby.eat('kibble') 
+scooby.eat('kibbles') 
 
 
 
